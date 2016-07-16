@@ -137,6 +137,8 @@ This software is released under the [MIT License](https://github.com/rfunc-labo/
 Links
 ------
 
++ [rfunc][rfunc_url]
 
+[rfunc_url]: https://github.com/rfunc-labo/rfunc
 
 <!-- Links End -->
