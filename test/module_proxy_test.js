@@ -20,18 +20,20 @@ describe('module-proxy', function () {
   }))
 
   it('Module proxy', () => co(function * () {
-    let api = moduleProxy({
+    let api01 = moduleProxy({
       $before () {
         const s = this
         let { state } = s
         assert.equal(state.foo, 'This is foo')
         state.bar = 'This is bar'
+        s.hoge = 'This is hoge'
       },
       $after () {
         const s = this
         assert.equal(s.state.bar, 'This is bar')
       },
       sayHi () {
+        assert.equal(this.hoge, 'This is hoge')
         return 'hi'
       }
     }, {
@@ -39,8 +41,9 @@ describe('module-proxy', function () {
         state: { foo: 'This is foo' }
       }
     })
-    let hi = yield api.sayHi()
+    let hi = yield api01.sayHi()
     assert.equal(hi, 'hi')
+    assert.equal(api01.hoge, 'This is hoge')
   }))
 })
 
