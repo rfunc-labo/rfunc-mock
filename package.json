@@ -1,6 +1,6 @@
 {
   "name": "rfunc-mock",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Mock utility for rfunc.",
   "main": "lib",
   "scripts": {
