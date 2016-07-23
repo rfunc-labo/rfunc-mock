@@ -34,6 +34,7 @@ describe('module-proxy', function () {
       },
       sayHi () {
         assert.equal(this.hoge, 'This is hoge')
+        assert.ok('hoge' in this)
         return 'hi'
       }
     }, {
@@ -43,7 +44,8 @@ describe('module-proxy', function () {
     })
     let hi = yield api01.sayHi()
     assert.equal(hi, 'hi')
-    assert.equal(api01.hoge, 'This is hoge')
+    assert.ok('hoge' in api01)
+    assert.ok('hoge' in api01)
   }))
 })
 
